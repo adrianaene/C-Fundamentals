@@ -10,12 +10,12 @@ namespace MyHomework
     {
         protected string lastName;
         protected string firstName;
-        protected string dateOfBirth;
+        protected DateTime dateOfBirth;
 
-        public Person(string lastName, string firstName, string dateOfBirth)
+        public Person(string lastName, string firstName, DateTime dateOfBirth)
         {
             this.lastName = lastName;
-            this.firstName = lastName;
+            this.firstName = firstName;
             this.dateOfBirth = dateOfBirth;
         }
     }

@@ -6,24 +6,33 @@ using System.Threading.Tasks;
 
 namespace MyHomework
 {
+    public enum LeaveType
+    {
+        Medical,
+        Holiday,
+        Other
+
+    };
+
     class Leave
     {
-        public string startingDate;
+        public DateTime startingDate;
         public int duration;
-        public string leaveType;
+        public LeaveType leaveType;
         public Employee employee;
 
-        public Leave(string startingDate, int duration, string leaveType){
+        public Leave(DateTime startingDate, int duration, LeaveType leaveType)
+        {
             this.startingDate = startingDate;
             this.duration = duration;
             this.leaveType = leaveType;
         }
 
-        public void toString()
+        public override string ToString()
         {
-            Console.WriteLine("Start date: " + startingDate);
-            Console.WriteLine("Duration: " + duration);
-            Console.WriteLine("LeaveType: " + leaveType);
+            return
+                string.Format("Start date: " + this.startingDate.ToShortDateString() + " \nDuration: " + this.duration + " \nLeaveType: " + this.leaveType);
+
         }
     }
 }

@@ -13,14 +13,16 @@ namespace MyHomework
             // in main am creat un angajat
             // am adaugat un concediu de 5 zile si apoi unul care arunca o exceptie
 
-            Employee angajat = new Employee("Ene", "Adriana", "9.05.1993", "9.07.2015", 2000, 21);
-            Leave leave1 = new Leave("9.08.2015", 5, "Holiday");
-            Leave leave2 = new Leave("9.09.2015", 25, "Medical");
+            var angajat = new Employee("Ene", "Adriana", new DateTime(1993, 05, 09), new DateTime(2015, 06, 09), 2000, 21);
+            var leave1 = new Leave(new DateTime(2015, 09, 09), 5, LeaveType.Holiday);
+            var leave2 = new Leave(new DateTime(2015, 10, 10), 5, LeaveType.Medical);
+            var leave3 = new Leave(new DateTime(2015, 10, 12), 5, LeaveType.Medical);
             angajat.DisplayInfo();
             angajat.AddNewLeave(leave1);
             angajat.AddNewLeave(leave2);
+            angajat.AddNewLeave(leave3);
             Console.WriteLine("Concedii: ");
-            angajat.PrintDaysOff();
+            angajat.PrintDaysOff(2015);
             Console.Read();
 
         }
